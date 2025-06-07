@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БГУИР 80-х | Тайные места</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="mystery-man">
+                    <div class="mystery-head">
+                        <div class="mystery-eye left-eye"></div>
+                        <div class="mystery-eye right-eye"></div>
+                    </div>
+                    <div class="mystery-body"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>БГУИР</h1>
+                    <p>Тайны и легенды</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="places.html" class="active">Тайные места</a></li>
+                <li><a href="retro.html">Ретро-техника</a></li>
+                <li><a href="mist.html">Мистические истории</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1 class="vhs-title">ТАЙНЫ БГУИР: КАРТА И ЛЕГЕНДЫ</h1>
+        
+        <div class="retro-console">
+            <div class="console-header">
+                <span class="console-title">БГУИР_ТАЙНЫ.EXE</span>
+                <span class="console-title">1987</span>
+            </div>
+            <div class="console-body">
+                <p>> ЗАГРУЗКА СЕКРЕТНЫХ ДАННЫХ...</p>
+                <p>> НАЙДЕНО: 7 ЗАГАДОЧНЫХ МЕСТ</p>
+                <p>> 3 МИСТИЧЕСКИЕ ИСТОРИИ</p>
+                <p>> 5 ПОПУЛЯРНЫХ СТУДЕНЧЕСКИХ МЕСТ</p>
+                <p>> ВВЕДИТЕ ПАРОЛЬ ДЛЯ ПРОДОЛЖЕНИЯ <span class="console-cursor">_</span></p>
+            </div>
+        </div>
+        
+        <section class="history-section">
+            <h2>ИНТЕРАКТИВНАЯ КАРТА БГУИР</h2>
+            <p>Исследуйте тайные уголки университета и узнайте мистические истории, связанные с ними</p>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <div class="tab-button active" data-tab="map-tab">Карта корпусов</div>
+                    <div class="tab-button" data-tab="stories-tab">Мистические истории</div>
+                    <div class="tab-button" data-tab="popular-tab">Популярные места</div>
+                    <div class="tab-button" data-tab="cool-tab">Крутые места</div>
+                </div>
+                
+                <div class="tab-content active" id="map-tab">
+                    <div class="map-container">
+                        <div id="yandex-map" style="width: 100%; height: 100%;">
+                            <script type="text/javascript" charset="utf-8" async 
+                            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1f112fc8800fdd12f41709d6ff0d8c079a1cc498d946cec8aab2eb019f19ce7c&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                        <div class="map-tooltip" id="map-tooltip">
+                            <h3 id="tooltip-title">Название места</h3>
+                            <p id="tooltip-desc">Описание места</p>
+                            <p class="ghost-story" id="tooltip-story">Мистическая история этого места...</p>
+                        </div>
+                    </div>
+                    <div class="map-legend">
+                        <h3>ЛЕГЕНДА КАРТЫ:</h3>
+                        <ul>
+                            <li><span style="background: var(--neon-pink);"></span> Мистические места</li>
+                            <li><span style="background: var(--electric-blue);"></span> Популярные места</li>
+                            <li><span style="background: var(--lime-green);"></span> Секретные места</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="stories-tab">
+                    <div class="places-grid">
+                        <div class="place-card">
+                            <h3>ПРИЗРАК 4 КОРПУСА</h3>
+                            <p>Легенда гласит, что в подвале 4 корпуса обитает дух бывшего профессора, который продолжал работать даже после смерти. Студенты утверждают, что видели, как по ночам в пустых лабораториях включаются компьютеры и слышны звуки печатной машинки.</p>
+                            <p class="location">Местоположение: Подвал 4 корпуса</p>
+                            <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                        </div>
+                        
+                        <div class="place-card">
+                            <h3>ЗЕРКАЛО В 5 КОРПУСЕ</h3>
+                            <p>На 3 этаже 5 корпуса есть старое зеркало, в котором, по слухам, можно увидеть свое будущее. Студенты рассказывают, что если посмотреть в него в полночь, можно увидеть себя через 10 лет. Некоторые утверждают, что видели там совсем другого человека...</p>
+                            <p class="location">Местоположение: 5 корпус, 3 этаж</p>
+                            <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                        </div>
+                        
+                        <div class="place-card">
+                            <h3>ТАЙНАЯ КОМНАТА В 1 КОРПУСЕ</h3>
+                            <p>Ходят слухи, что за одной из стен в старом крыле 1 корпуса есть скрытая комната, где в советское время проводили секретные эксперименты. Некоторые студенты утверждают, что находили потайную дверь, но она всегда оказывалась запертой. Иногда из-за стены слышны странные звуки.</p>
+                            <p class="location">Местоположение: 1 корпус, старое крыло</p>
+                            <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="popular-tab">
+                    <h3>Самые популярные места среди студентов (по данным VK check-ins)</h3>
+                    
+                    <div class="popular-places">
+                        <div class="popular-place">
+                            <h3>1. Столовая 4 корпуса</h3>
+                            <p>Самая большая и популярная столовая университета. Здесь всегда многолюдно, особенно в обеденное время.</p>
+                            <div class="popularity">
+                                <div class="popularity-bar" data-percent="95"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-place">
+                            <h3>2. Библиотека</h3>
+                            <p>Не только для учебы, но и для тихих встреч и подготовки к экзаменам.</p>
+                            <div class="popularity">
+                                <div class="popularity-bar" data-percent="85"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-place">
+                            <h3>3. Лаборатория 5 корпуса</h3>
+                            <p>Здесь студенты проводят много времени за практическими занятиями.</p>
+                            <div class="popularity">
+                                <div class="popularity-bar" data-percent="75"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-place">
+                            <h3>4. Внутренний двор</h3>
+                            <p>Место для отдыха между парами, особенно в теплое время года.</p>
+                            <div class="popularity">
+                                <div class="popularity-bar" data-percent="65"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-place">
+                            <h3>5. Кафе "Радиоволна"</h3>
+                            <p>Небольшое кафе рядом с университетом, где любят собираться студенты.</p>
+                            <div class="popularity">
+                                <div class="popularity-bar" data-percent="55"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="cool-tab">
+                    <h3>Самые крутые и загадочные места БГУИР</h3>
+                    <p>Только для избранных - места, о которых знают не все, но которые стоит посетить</p>
+                    
+                    <div class="cool-places">
+                        <div class="cool-place">
+                            <h3>ТЕХНИЧЕСКИЙ АРХИВ 80-Х</h3>
+                            <p>Скрытая комната в подвале 3 корпуса, где хранятся чертежи и прототипы устройств, разработанных студентами в 80-х годах. Некоторые из этих изобретений опередили свое время.</p>
+                            <span class="location">Местоположение: 3 корпус, подвал, за синей дверью</span>
+                            <div class="secret-code">КОД ДОСТУПА: 1987BSUIR</div>
+                        </div>
+                        
+                        <div class="cool-place">
+                            <h3>РАДИОЛЮБИТЕЛЬСКИЙ КЛУБ</h3>
+                            <p>Тайное место, где собираются студенты-радиолюбители. Здесь можно найти уникальное оборудование для связи, включая самодельные передатчики 80-х годов.</p>
+                            <span class="location">Местоположение: 4 корпус, 5 этаж, комната 512 (постучать 3-2-3)</span>
+                            <div class="secret-code">ПАРОЛЬ: "МАЯК"</div>
+                        </div>
+                        
+                        <div class="cool-place">
+                            <h3>ЗАБЫТАЯ ЛАБОРАТОРИЯ ЭЛЕКТРОНИКИ</h3>
+                            <p>Комната с экспериментальными установками 80-х, которые до сих пор работают. По слухам, здесь проводились секретные исследования в области передачи данных.</p>
+                            <span class="location">Местоположение: 2 корпус, чердачное помещение</span>
+                            <div class="secret-code">КЛЮЧ: у сторожа (сказать "От Максима")</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="history-section">
+            <h2>СЕКРЕТНЫЕ МЕСТА БГУИР</h2>
+            <p>Места, о которых знают не все студенты, но которые стоит посетить</p>
+            
+            <div class="places-grid">
+                <div class="place-card">
+                    <h3>КРЫША 4 КОРПУСА</h3>
+                    <p>Доступ на крышу официально запрещен, но некоторые студенты находят способы туда попасть. Отсюда открывается лучший вид на город. По слухам, именно здесь в 80-х проводили тайные встречи студенты-радиолюбители.</p>
+                    <p class="location">Как найти: через техническое помещение на 5 этаже</p>
+                    <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                </div>
+                
+                <div class="place-card">
+                    <h3>СТАРЫЙ ПОДВАЛ 1 КОРПУСА</h3>
+                    <p>В этом подвале сохранилось оборудование 70-80х годов. Некоторые приборы до сих пор работают. Говорят, что здесь можно найти уникальные радиодетали, которые больше нигде не встречаются.</p>
+                    <p class="location">Как найти: через служебный вход рядом с гардеробом</p>
+                    <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                </div>
+                
+                <div class="place-card">
+                    <h3>ЗАБРОШЕННАЯ ЛАБОРАТОРИЯ</h3>
+                    <p>На верхних этажах 3 корпуса есть лаборатория, которую не используют уже много лет. Там остались старые компьютеры и документация на них. Некоторые студенты используют это место для тайных встреч.</p>
+                    <p class="location">Как найти: 3 корпус, 6 этаж, последняя дверь справа</p>
+                    <button class="retro-btn" style="margin-top: 10px;">ПОДРОБНЕЕ</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>КОНТАКТЫ</h3>
+                <p>220013, г. Минск, ул. П. Бровки, 6</p>
+                <p>Приемная ректора: +375 (17) 293-21-21</p>
+                <p>Email: info@bsuir.by</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>ТАЙНЫЕ МЕСТА</h3>
+                <a href="#">Мистические истории</a>
+                <a href="#">Заброшенные помещения</a>
+                <a href="#">Секретные входы</a>
+                <a href="#">Легенды БГУИР</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>СОЦСЕТИ</h3>
+                <div class="social-links">
+                    <a href="https://vk.com/bsuirby" target="_blank">VK</a>
+                    <a href="https://t.me/bsuir_official" target="_blank">TG</a>
+                    <a href="https://www.youtube.com/user/bsuirBY" target="_blank">YT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 1987 БГУИР | ТАЙНЫ И ЛЕГЕНДЫ</p>
+        </div>
+    </footer>
+    
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // Табы
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Удаляем активный класс у всех кнопок и контента
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Добавляем активный класс к текущей кнопке
+                    button.classList.add('active');
+                    
+                    // Находим соответствующий контент и делаем его активным
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Анимация полосок популярности
+            const popularityBars = document.querySelectorAll('.popularity-bar');
+            popularityBars.forEach(bar => {
+                const percent = bar.dataset.percent;
+                setTimeout(() => {
+                    bar.style.width = `${percent}%`;
+                }, 500);
+            });
+            
+            // Кнопка скролла вверх
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Эффект глюка для мистических историй
+            const ghostStories = document.querySelectorAll('.ghost-story, .place-card');
+            ghostStories.forEach(story => {
+                story.addEventListener('mouseenter', function() {
+                    if (Math.random() > 0.7) {
+                        this.style.animation = 'none';
+                        void this.offsetWidth;
+                        this.style.animation = 'vhs-flicker 0.5s';
+                    }
+                });
+            });
+
+            // Анимация для человечка в логотипе
+            const mysteryMan = document.querySelector('.mystery-man');
+            mysteryMan.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.filter = 'hue-rotate(45deg)';
+            });
+            
+            mysteryMan.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.filter = '';
+            });
+
+            // Проверка загрузки карты
+            if (document.querySelector('#yandex-map')) {
+                const checkMapLoaded = setInterval(function() {
+                    if (document.querySelector('#yandex-map iframe')) {
+                        console.log('Яндекс.Карта успешно загружена');
+                        clearInterval(checkMapLoaded);
+                        
+                        const mapIframe = document.querySelector('#yandex-map iframe');
+                        mapIframe.style.border = 'none';
+                        mapIframe.style.filter = 'hue-rotate(180deg) saturate(150%)';
+                    }
+                }, 100);
+            }
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Табы
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Анимация полосок популярности
+        const popularityBars = document.querySelectorAll('.popularity-bar');
+        popularityBars.forEach(bar => {
+            const percent = bar.dataset.percent;
+            setTimeout(() => {
+                bar.style.width = `${percent}%`;
+            }, 500);
+        });
+        
+        // Кнопка скролла вверх
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Эффект глюка для мистических историй
+        const ghostStories = document.querySelectorAll('.ghost-story, .place-card');
+        ghostStories.forEach(story => {
+            story.addEventListener('mouseenter', function() {
+                if (Math.random() > 0.7) {
+                    this.style.animation = 'none';
+                    void this.offsetWidth;
+                    this.style.animation = 'vhs-flicker 0.5s';
+                }
+            });
+        });
+
+        // Анимация для человечка в логотипе
+        const mysteryMan = document.querySelector('.mystery-man');
+        mysteryMan.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.filter = 'hue-rotate(45deg)';
+        });
+        
+        mysteryMan.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.filter = '';
+        });
+
+        // Проверка загрузки карты
+        if (document.querySelector('#yandex-map')) {
+            const checkMapLoaded = setInterval(function() {
+                if (document.querySelector('#yandex-map iframe')) {
+                    console.log('Яндекс.Карта успешно загружена');
+                    clearInterval(checkMapLoaded);
+                    
+                    const mapIframe = document.querySelector('#yandex-map iframe');
+                    mapIframe.style.border = 'none';
+                    mapIframe.style.filter = 'hue-rotate(180deg) saturate(150%)';
+                }
+            }, 100);
+        }
+        
+        // Обработка кнопок "Подробнее" для скримера
+        const detailButtons = document.querySelectorAll('.retro-btn');
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Создаем модальное окно с предупреждением
+                const warningModal = document.createElement('div');
+                warningModal.className = 'scrimer-warning-modal';
+                warningModal.innerHTML = `
+                    <div class="scrimer-warning-content">
+                        <h3>ВНИМАНИЕ!</h3>
+                        <p>Эта история содержит мистические элементы и может напугать. Продолжить?</p>
+                        <div class="scrimer-warning-buttons">
+                            <button class="retro-btn scrimer-no">НЕТ</button>
+                            <button class="retro-btn scrimer-yes">ДА</button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(warningModal);
+                
+                // Обработка кнопок в модальном окне
+                document.querySelector('.scrimer-no').addEventListener('click', function() {
+                    document.body.removeChild(warningModal);
+                });
+                
+                document.querySelector('.scrimer-yes').addEventListener('click', function() {
+                    document.body.removeChild(warningModal);
+                    showScrimer();
+                });
+            });
+        });
+        
+        // Функция показа скримера
+        function showScrimer() {
+            const scrimer = document.createElement('div');
+            scrimer.className = 'scrimer-container';
+            scrimer.innerHTML = `
+                <div class="scrimer-image">
+                    <img src="https://i.gifer.com/7VE.gif" alt="Scary face">
+                </div>
+                <div class="scrimer-text">
+                    <p>БУГАГАШЕНЬКИ!</p>
+                </div>
+                <button class="retro-btn scrimer-close">ЗАКРЫТЬ</button>
+            `;
+            
+            document.body.appendChild(scrimer);
+            document.querySelector('.scrimer-close').addEventListener('click', function() {
+                document.body.removeChild(scrimer);
+            });
+            
+            // Автоматическое закрытие через 5 секунд
+            setTimeout(() => {
+                if (document.body.contains(scrimer)) {
+                    document.body.removeChild(scrimer);
+                }
+            }, 5000);
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БГУИР 80-х | Ваши истории</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="vhs-title">ВАШИ МИСТИЧЕСКИЕ ИСТОРИИ</h1>
+            <p class="subtitle">Расскажите о странных событиях в стенах БГУИР</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="places.html">Тайные места</a></li>
+                <li><a href="retro.html">Ретро-техника</a></li>
+                <li><a href="events.html" class="active">Мистические истории</a></li>
+                <li><a href="share.html">Поделиться</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section class="history-section">
+            <div class="retro-console">
+                <div class="console-header">
+                    <span class="console-title">BSUIR_STORIES.EXE</span>
+                    <span class="console-title">1987</span>
+                </div>
+                <div class="console-body">
+                    <p>> ЗАГРУЗКА БАЗЫ ДАННЫХ...</p>
+                    <p>> НАЙДЕНО: 127 СТУДЕНЧЕСКИХ ИСТОРИЙ</p>
+                    <p>> 43 МИСТИЧЕСКИХ СЛУЧАЯ</p>
+                    <p>> 18 НЕОБЪЯСНИМЫХ ЯВЛЕНИЙ</p>
+                    <p>> ВВЕДИТЕ ВАШУ ИСТОРИЮ <span class="console-cursor">_</span></p>
+                </div>
+            </div>
+            
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <div class="tab-button active" data-tab="share-tab">Поделиться</div>
+                    <div class="tab-button" data-tab="stories-tab">Читать истории</div>
+                    <div class="tab-button" data-tab="favorites-tab">Любимые места</div>
+                </div>
+                
+                <div class="tab-content active" id="share-tab">
+                    <form id="story-form" class="retro-form">
+                        <div class="form-group">
+                            <label for="story-title">ЗАГОЛОВОК:</label>
+                            <input type="text" id="story-title" required placeholder="Например: Призрак в 4 корпусе">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="story-text">ВАША ИСТОРИЯ:</label>
+                            <textarea id="story-text" rows="6" required placeholder="Опишите что произошло..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="story-place">МЕСТО ПРОИСШЕСТВИЯ:</label>
+                            <select id="story-place">
+                                <option value="1">1 корпус</option>
+                                <option value="2">2 корпус</option>
+                                <option value="3">3 корпус</option>
+                                <option value="4">4 корпус</option>
+                                <option value="5">5 корпус</option>
+                                <option value="6">6 корпус</option>
+                                <option value="7">7 корпус</option>
+                                <option value="8">8 корпус</option>
+                                <option value="9">Общежитие</option>
+                                <option value="10">Другое место</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="story-year">ГОД ПРОИСШЕСТВИЯ:</label>
+                            <input type="number" id="story-year" min="1970" max="2025" value="2023">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>ЭТО СТРАШНАЯ ИСТОРИЯ?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="scary" value="1" checked> Да</label>
+                                <label><input type="radio" name="scary" value="0"> Нет</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="retro-btn">ОТПРАВИТЬ</button>
+                    </form>
+                    
+                    <div id="form-success" class="retro-message" style="display: none;">
+                        <p>✓ ИСТОРИЯ УСПЕШНО ДОБАВЛЕНА</p>
+                        <p>Спасибо за ваш вклад в архив мистики БГУИР!</p>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="stories-tab">
+                    <div class="stories-filter">
+                        <div class="filter-group">
+                            <label for="filter-place">ФИЛЬТР ПО МЕСТУ:</label>
+                            <select id="filter-place">
+                                <option value="all">Все места</option>
+                                <option value="1">1 корпус</option>
+                                <option value="4">4 корпус</option>
+                                <option value="5">5 корпус</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="filter-year">ФИЛЬТР ПО ГОДУ:</label>
+                            <select id="filter-year">
+                                <option value="all">Все годы</option>
+                                <option value="1980">1980-е</option>
+                                <option value="1990">1990-е</option>
+                                <option value="2000">2000-е</option>
+                                <option value="2010">2010-е</option>
+                                <option value="2020">2020-е</option>
+                            </select>
+                        </div>
+                        
+                        <button id="apply-filter" class="retro-btn">ПРИМЕНИТЬ</button>
+                    </div>
+                    
+                    <div class="stories-list">
+                        <div class="story-card">
+                            <h3>ПРИЗРАК В 4 КОРПУСЕ</h3>
+                            <div class="story-meta">
+                                <span class="story-place">4 корпус</span>
+                                <span class="story-year">1987</span>
+                                <span class="story-scary">👻 Страшно</span>
+                            </div>
+                            <p>В подвале 4 корпуса видели силуэт мужчины в старомодном костюме. Когда к нему подходили, он исчезал. Старожилы говорят, что это призрак профессора, который работал здесь в 60-х...</p>
+                            <div class="story-actions">
+                                <button class="retro-btn small">ЧИТАТЬ ДАЛЕЕ</button>
+                                <span class="story-likes">❤️ 24</span>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <h3>ТАИНСТВЕННЫЕ СТУКИ В 5 КОРПУСЕ</h3>
+                            <div class="story-meta">
+                                <span class="story-place">5 корпус</span>
+                                <span class="story-year">1995</span>
+                                <span class="story-scary">👻 Страшно</span>
+                            </div>
+                            <p>По ночам из пустой аудитории 502 доносятся звуки печатной машинки. Когда охрана проверяет аудиторию, там никого нет, но на столе иногда находят листки с непонятными символами...</p>
+                            <div class="story-actions">
+                                <button class="retro-btn small">ЧИТАТЬ ДАЛЕЕ</button>
+                                <span class="story-likes">❤️ 18</span>
+                            </div>
+                        </div>
+                        
+                        <div class="story-card">
+                            <h3>ЗАГАДОЧНЫЙ ЛИФТ В 1 КОРПУСЕ</h3>
+                            <div class="story-meta">
+                                <span class="story-place">1 корпус</span>
+                                <span class="story-year">2003</span>
+                                <span class="story-scary">😊 Не страшно</span>
+                            </div>
+                            <p>Лифт в старом крыле иногда привозит на несуществующий 6 этаж. Там коридор с дверями, которых нет на обычных этажах. Однажды группа студентов провела там целый час, хотя по времени прошло всего 5 минут...</p>
+                            <div class="story-actions">
+                                <button class="retro-btn small">ЧИТАТЬ ДАЛЕЕ</button>
+                                <span class="story-likes">❤️ 32</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="retro-btn">←</button>
+                        <span class="page-number">1</span>
+                        <button class="retro-btn">→</button>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="favorites-tab">
+                    <h3>ЛЮБИМЫЕ МЕСТА СТУДЕНТОВ</h3>
+                    <p>Поделитесь своими любимыми уголками БГУИР</p>
+                    
+                    <div class="favorites-grid">
+                        <div class="favorite-card">
+                            <h3>СТОЛОВАЯ 4 КОРПУСА</h3>
+                            <p>"Лучшие пирожки в университете! Всегда беру с собой несколько штук на пары."</p>
+                            <div class="favorite-author">- Алексей, ФКСиС, 2021</div>
+                            <div class="favorite-tags">
+                                <span class="tag">🍔 Еда</span>
+                                <span class="tag">👥 Компания</span>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-card">
+                            <h3>БИБЛИОТЕКА</h3>
+                            <p>"Тишина и уют. Люблю готовиться к экзаменам именно здесь, особенно в зимние вечера."</p>
+                            <div class="favorite-author">- Мария, ИЭФ, 2019</div>
+                            <div class="favorite-tags">
+                                <span class="tag">📚 Учеба</span>
+                                <span class="tag">☕ Атмосфера</span>
+                            </div>
+                        </div>
+                        
+                        <div class="favorite-card">
+                            <h3>ВНУТРЕННИЙ ДВОР</h3>
+                            <p>"Отличное место для отдыха между парами. Летом здесь особенно красиво!"</p>
+                            <div class="favorite-author">- Иван, ФИТУ, 2020</div>
+                            <div class="favorite-tags">
+                                <span class="tag">🌳 Отдых</span>
+                                <span class="tag">📸 Фото</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form id="favorite-form" class="retro-form">
+                        <div class="form-group">
+                            <label for="favorite-place">ВАШЕ ЛЮБИМОЕ МЕСТО:</label>
+                            <input type="text" id="favorite-place" required placeholder="Например: Лаборатория в 5 корпусе">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="favorite-text">ПОЧЕМУ ВАМ НРАВИТСЯ ЭТО МЕСТО?</label>
+                            <textarea id="favorite-text" rows="4" required placeholder="Опишите, что вам нравится..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="favorite-name">ВАШЕ ИМЯ (необязательно):</label>
+                            <input type="text" id="favorite-name" placeholder="Можно указать факультет и год">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>ТЕГИ:</label>
+                            <div class="tags-container">
+                                <label class="tag-checkbox"><input type="checkbox" name="tags" value="food"> 🍔 Еда</label>
+                                <label class="tag-checkbox"><input type="checkbox" name="tags" value="study"> 📚 Учеба</label>
+                                <label class="tag-checkbox"><input type="checkbox" name="tags" value="photo"> 📸 Фото</label>
+                                <label class="tag-checkbox"><input type="checkbox" name="tags" value="friends"> 👥 Компания</label>
+                                <label class="tag-checkbox"><input type="checkbox" name="tags" value="atmosphere"> ☕ Атмосфера</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="retro-btn">ДОБАВИТЬ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contacts">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>КОНТАКТЫ</h3>
+                <p>220013, г. Минск, ул. П. Бровки, 6</p>
+                <p>Приемная ректора: +375 (17) 293-21-21</p>
+                <p>Email: info@bsuir.by</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>ВАШИ ИСТОРИИ</h3>
+                <a href="#">Как написать историю</a>
+                <a href="#">Правила публикации</a>
+                <a href="#">Лучшие истории месяца</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>СОЦСЕТИ</h3>
+                <div class="social-links">
+                    <a href="https://vk.com/bsuirby" target="_blank">VK</a>
+                    <a href="https://t.me/bsuir_official" target="_blank">TG</a>
+                    <a href="https://www.youtube.com/user/bsuirBY" target="_blank">YT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 1987 БГУИР | ВАШИ ИСТОРИИ</p>
+        </div>
+    </footer>
+    
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Табы
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Обработка формы истории
+            const storyForm = document.getElementById('story-form');
+            const formSuccess = document.getElementById('form-success');
+            
+            if (storyForm) {
+                storyForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Здесь можно добавить отправку данных на сервер
+                    // В демо-версии просто показываем сообщение об успехе
+                    storyForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    
+                    // Через 3 секунды возвращаем форму
+                    setTimeout(() => {
+                        storyForm.style.display = 'block';
+                        formSuccess.style.display = 'none';
+                        storyForm.reset();
+                    }, 3000);
+                });
+            }
+            
+            // Обработка формы любимых мест
+            const favoriteForm = document.getElementById('favorite-form');
+            
+            if (favoriteForm) {
+                favoriteForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Создаем новую карточку с введенными данными
+                    const placeName = document.getElementById('favorite-place').value;
+                    const placeText = document.getElementById('favorite-text').value;
+                    const authorName = document.getElementById('favorite-name').value || 'Аноним';
+                    
+                    // Собираем выбранные теги
+                    const selectedTags = [];
+                    document.querySelectorAll('input[name="tags"]:checked').forEach(tag => {
+                        selectedTags.push(tag.value);
+                    });
+                    
+                    // Создаем HTML для новой карточки
+                    const tagsHtml = selectedTags.map(tag => {
+                        const tagLabels = {
+                            'food': '🍔 Еда',
+                            'study': '📚 Учеба',
+                            'photo': '📸 Фото',
+                            'friends': '👥 Компания',
+                            'atmosphere': '☕ Атмосфера'
+                        };
+                        return `<span class="tag">${tagLabels[tag]}</span>`;
+                    }).join('');
+                    
+                    const newCard = document.createElement('div');
+                    newCard.className = 'favorite-card';
+                    newCard.innerHTML = `
+                        <h3>${placeName.toUpperCase()}</h3>
+                        <p>"${placeText}"</p>
+                        <div class="favorite-author">- ${authorName}</div>
+                        <div class="favorite-tags">${tagsHtml}</div>
+                    `;
+                    
+                    // Добавляем новую карточку в начало списка
+                    document.querySelector('.favorites-grid').prepend(newCard);
+                    
+                    // Сбрасываем форму
+                    favoriteForm.reset();
+                    
+                    // Показываем анимацию успеха
+                    const successMsg = document.createElement('div');
+                    successMsg.className = 'retro-message';
+                    successMsg.innerHTML = '<p>✓ МЕСТО ДОБАВЛЕНО В СПИСОК!</p>';
+                    favoriteForm.parentNode.insertBefore(successMsg, favoriteForm.nextSibling);
+                    
+                    setTimeout(() => {
+                        successMsg.remove();
+                    }, 2000);
+                });
+            }
+            
+            // Кнопка скролла вверх
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Эффект глюка для карточек историй
+            const storyCards = document.querySelectorAll('.story-card, .favorite-card');
+            storyCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (Math.random() > 0.7) {
+                        this.style.animation = 'none';
+                        void this.offsetWidth;
+                        this.style.animation = 'vhs-flicker 0.5s';
+                    }
+                });
+            });
+            
+            // Фильтрация историй
+            const applyFilter = document.getElementById('apply-filter');
+            if (applyFilter) {
+                applyFilter.addEventListener('click', function() {
+                    const placeFilter = document.getElementById('filter-place').value;
+                    const yearFilter = document.getElementById('filter-year').value;
+                    
+                    document.querySelectorAll('.story-card').forEach(card => {
+                        const cardPlace = card.querySelector('.story-place').textContent.includes(placeFilter) || placeFilter === 'all';
+                        const cardYear = card.querySelector('.story-year').textContent.startsWith(yearFilter) || yearFilter === 'all';
+                        
+                        if (cardPlace && cardYear) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
