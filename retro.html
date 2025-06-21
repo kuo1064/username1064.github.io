@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ретро-техника БГУИР | 80-е годы</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <header class="header-80s">
+        <div class="header-content-80s">
+            <div class="logo-80s">
+                <div class="retro-pc-logo">
+                    <div class="pc-screen">БГУИР</div>
+                    <div class="pc-keyboard"></div>
+                </div>
+                <div class="logo-text-80s">
+                    <h1>БГУИР</h1>
+                    <p>Ретро-техника 80-х</p>
+                    <div class="underline-80s"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="places.html" class="active">Тайные места</a></li>
+                <li><a href="retro.html">Ретро-техника</a></li>
+                <li><a href="mist.html">Мистические истории</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="container">
+    <section id="retro-tech" class="history-section">
+        <h2><i class="fas fa-desktop"></i> ЛЕГЕНДАРНАЯ ТЕХНИКА БГУИР</h2>
+        <div class="retro-grid">
+            <div class="retro-card">
+                <div class="retro-icon"><i class="fas fa-server"></i></div> <!-- Изменено на fa-server -->
+                <h3>ЭВМ "Минск-32"</h3>
+                <p>Главная ЭВМ института в 80-х. Занимала целую комнату, оперативная память - всего 64 КБ!</p>
+                <div class="retro-year">1982-1991</div>
+            </div>
+            
+            <div class="retro-card">
+                <div class="retro-icon"><i class="fas fa-tape"></i></div>
+                <h3>Накопители на магнитных лентах</h3>
+                <p>Для хранения данных использовались бобинные магнитофоны. Одна катушка - 10 МБ данных.</p>
+                <div class="retro-year">1975-1985</div>
+            </div>
+            
+           <div class="retro-card">
+                    <div class="retro-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3>Перфокарточные машины</h3>
+                    <p>Программы вводились перфокартами. Ошибка в одной карте - и всё начиналось заново!</p>
+                    <div class="retro-year">До 1980</div>
+                </div>
+                
+                <div class="retro-card">
+                    <div class="retro-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Самодельные игровые приставки</h3>
+                    <p>Студенты паяли приставки на микросхемах КР580. Легендарный "Тетрис" был хитом!</p>
+                    <div class="retro-year">1985-1990</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="memories" class="history-section neon-border">
+            <h2><i class="fas fa-memory"></i> ВОСПОМИНАНИЯ ВЕТЕРАНОВ</h2>
+            <div class="memory-tape">
+                <div class="memory-item">
+                    <div class="memory-year">1983</div>
+                    <p>"Когда привезли первый 'Минск-32', очередь на работу стояла на недели вперёд. Мы писали программы на Алголе и Фортране, отлаживали по ночам."</p>
+                    <div class="memory-author">- Проф. Иванов А.П.</div>
+                </div>
+                
+                <div class="memory-item">
+                    <div class="memory-year">1987</div>
+                    <p>"В лаборатории №5 стоял единственный в городе цветной монитор. Все приходили смотреть на графику в 16 цветов - это было чудо!"</p>
+                    <div class="memory-author">- Доц. Петрова И.В.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="history-section">
+            <h2><i class="fas fa-camera-retro"></i> ФОТОАРХИВ</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background-image: url('OIP.jpeg')">
+                    <div class="gallery-caption">ЭВМ "Минск-32", 1985</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('OIP\ \(1\).jpeg')">
+                    <div class="gallery-caption">Перфокарточная машина, 1980</div>
+                </div>
+                <div class="gallery-item" style="background-image: url('лена.jpg')">
+                    <div class="gallery-caption">Магнитные ленты, 1988</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <button class="open-quiz-btn" id="openQuizBtn">
+            <i class="fas fa-clipboard-check"></i> ЗАПОЛНИТЬ АНКЕТУ РЕТРО-ГИКА
+        </button>
+    </div>
+
+    <!-- Модальное окно анкеты -->
+    <div class="modal-overlay" id="quizModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h2><i class="fas fa-clipboard-check"></i> АНКЕТА РЕТРО-ГИКА</h2>
+            <form class="retro-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" placeholder="Введите имя" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Вы работали с:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="tech" value="punchcards"> Перфокартами</label>
+                        <label><input type="checkbox" name="tech" value="tapes"> Магнитными лентами</label>
+                        <label><input type="checkbox" name="tech" value="minsk"> ЭВМ "Минск"</label>
+                        <label><input type="checkbox" name="tech" value="basic"> Бейсиком</label>
+                        <label><input type="checkbox" name="tech" value="fortran"> Фортраном</label>
+                        <label><input type="checkbox" name="tech" value="pascal"> Паскалем</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ваш любимый ретро-гаджет:</label>
+                    <select name="favorite_gadget">
+                        <option value="bk0010">Электроника БК-0010</option>
+                        <option value="radio">Радио "Спираль"</option>
+                        <option value="tape_recorder">Кассетный магнитофон</option>
+                        <option value="calculator">Калькулятор "Электроника"</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Годы работы/учебы в БГУИР:</label>
+                    <input type="text" name="years" placeholder="Например: 1985-1990">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ваш контактный телефон (для связи):</label>
+                    <input type="tel" name="phone" placeholder="+375 (XX) XXX-XX-XX">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ваши воспоминания:</label>
+                    <textarea name="memories" placeholder="Расскажите о вашем опыте работы с ретро-техникой..."></textarea>
+                </div>
+                
+                <button type="submit" class="retro-button">Отправить <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Чибики ретро-техники на фоне -->
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3652/3652191.png'); top: 20%; left: 5%; animation-delay: 0s;"></div>
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3652/3652275.png'); top: 60%; left: 80%; animation-delay: 2s;"></div>
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933245.png'); top: 30%; left: 70%; animation-delay: 4s;"></div>
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/2933/2933245.png'); top: 80%; left: 10%; animation-delay: 1s;"></div>
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/3652/3652191.png'); top: 50%; left: 50%; animation-delay: 3s;"></div>
+    <div class="chibi" style="background-image: url('https://cdn-icons-png.flaticon.com/512/4169/4169139.png'); top: 30%; left: 25%; animation-delay: 5s;"></div>
+    
+
+    <div class="disco-floor">
+        <div class="disco-text">
+            <h3 data-text="RETRO TECH RULES">RETRO TECH RULES</h3>
+            <p>Где железо было большим, а идеи - огромными!</p>
+        </div>
+    </div>
+
+    <footer id="contacts">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3><span class="footer-icon">📻</span> РЕТРО-КЛУБ БГУИР</h3>
+                <p>Приходите в каб. 312 главного корпуса по средам с 18:00</p>
+            </div>
+            <div class="footer-section">
+                <h3><span class="footer-icon">📠</span> КОНТАКТЫ</h3>
+                <p>retro@xxx.by</p>
+                <p>Тел: +375 (17) XXX-XX-XX (доб. 80)</p>
+            </div>
+        </div>
+        <div class="contacts">
+            <p>По вопросам сотрудничества: +375 (29) XXX-XX-XX</a> (Карина)</p>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Анимация кнопки "Наверх"
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Управление модальным окном анкеты
+        const quizModal = document.getElementById('quizModal');
+        const openQuizBtn = document.getElementById('openQuizBtn');
+        const closeModal = document.getElementById('closeModal');
+
+        openQuizBtn.addEventListener('click', () => {
+            quizModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', () => {
+            quizModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        quizModal.addEventListener('click', (e) => {
+            if (e.target === quizModal) {
+                quizModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Анимация отправки формы
+        document.querySelector('.retro-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваши ретро-воспоминания сохранены в архиве!');
+            this.reset();
+            quizModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Создание дополнительных чибиков
+        function createChibis() {
+            const chibiImages = [
+                'https://cdn-icons-png.flaticon.com/512/3652/3652191.png',
+                'https://cdn-icons-png.flaticon.com/512/3652/3652275.png',
+                'https://cdn-icons-png.flaticon.com/512/2933/2933245.png',
+                'https://cdn-icons-png.flaticon.com/512/3652/3652286.png',
+                'https://cdn-icons-png.flaticon.com/512/2933/2933326.png'
+            ];
+            
+            for (let i = 0; i < 5; i++) {
+                const chibi = document.createElement('div');
+                chibi.className = 'chibi';
+                chibi.style.backgroundImage = `url('${chibiImages[Math.floor(Math.random() * chibiImages.length)]}')`;
+                chibi.style.top = `${Math.random() * 80 + 10}%`;
+                chibi.style.left = `${Math.random() * 80 + 10}%`;
+                chibi.style.animationDelay = `${Math.random() * 5}s`;
+                chibi.style.width = `${Math.random() * 50 + 50}px`;
+                chibi.style.height = chibi.style.width;
+                document.body.appendChild(chibi);
+            }
+        }
+
+        // Вызываем функцию создания чибиков после загрузки страницы
+        window.addEventListener('load', createChibis);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
