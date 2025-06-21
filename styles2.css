@@ -1658,3 +1658,181 @@ footer {
     50% { opacity: 1; }
     100% { opacity: 0.7; }
 }
+/* Подключаем шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap');
+
+/* Стиль для основного логотипа */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-text h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Стиль для заголовка "Тайны и легенды" */
+.logo-text p {
+    font-family: 'Creepster', cursive;
+    font-size: 2.2rem;
+    color: #ff3864;
+    text-shadow: 
+        0 0 5px #ff0000,
+        0 0 10px #ff3864,
+        0 0 20px #ff3864,
+        0 0 40px #ff0000;
+    margin-top: 0.5rem;
+    letter-spacing: 3px;
+    transform: skew(-10deg);
+    animation: bloodPulse 2s ease-in-out infinite alternate;
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.logo-text p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff3864" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg>') no-repeat;
+    transform: translateY(-50%) rotate(20deg);
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-text p::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff3864, transparent);
+    box-shadow: 0 0 10px #ff3864;
+    animation: flicker 1.5s ease-in-out infinite alternate;
+}
+
+/* Анимации для заголовка */
+@keyframes bloodPulse {
+    0% {
+        text-shadow: 
+            0 0 5px #ff0000,
+            0 0 10px #ff3864,
+            0 0 20px #ff3864;
+        transform: skew(-10deg) scale(1);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px #ff0000,
+            0 0 20px #ff3864,
+            0 0 40px #ff3864;
+        transform: skew(-10deg) scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) rotate(20deg) translateY(0); }
+    50% { transform: translateY(-50%) rotate(20deg) translateY(-10px); }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.3;
+    }
+}
+
+/* Стили для мистического человечка */
+.mystery-man {
+    position: relative;
+    width: 80px;
+    height: 120px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+}
+
+.mystery-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.5),
+        inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.mystery-eye {
+    position: absolute;
+    top: 15px;
+    width: 10px;
+    height: 10px;
+    background: #00ffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px #00ffff;
+    animation: eyeGlow 2s ease-in-out infinite alternate;
+}
+
+.left-eye {
+    left: 10px;
+}
+
+.right-eye {
+    right: 10px;
+}
+
+.mystery-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 70px;
+    background: #222;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes eyeGlow {
+    0% { 
+        opacity: 0.7;
+        box-shadow: 
+            0 0 5px #00ffff,
+            0 0 10px #00ffff;
+    }
+    100% { 
+        opacity: 1;
+        box-shadow: 
+            0 0 10px #00ffff,
+            0 0 20px #00ffff;
+    }
+}
+
+/* Дополнительные стили для шапки */
+header {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
+    padding: 20px 0;
+    border-bottom: 3px solid #ff3864;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
