@@ -1658,106 +1658,28 @@ footer {
     50% { opacity: 1; }
     100% { opacity: 0.7; }
 }
-/* Подключаем шрифты */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap');
+:root {
+    --electric-blue: #05d9e8;
+    --neon-purple: #d300c5;
+    --neon-pink: #ff2a6d;
+    --deep-black: #0d0221;
+}
 
-/* Стиль для основного логотипа */
+/* ==================== */
+/* ЛОГОТИП "ТАЙНЫ И ЛЕГЕНДЫ" */
+/* ==================== */
 .logo {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.logo-text h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 3rem;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    margin-bottom: 0.5rem;
-}
-
-/* Стиль для заголовка "Тайны и легенды" */
-.logo-text p {
-    font-family: 'Creepster', cursive;
-    font-size: 2.2rem;
-    color: #ff3864;
-    text-shadow: 
-        0 0 5px #ff0000,
-        0 0 10px #ff3864,
-        0 0 20px #ff3864,
-        0 0 40px #ff0000;
-    margin-top: 0.5rem;
-    letter-spacing: 3px;
-    transform: skew(-10deg);
-    animation: bloodPulse 2s ease-in-out infinite alternate;
-    position: relative;
-    display: inline-block;
-    padding: 0 15px;
-}
-
-.logo-text p::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -10px;
-    width: 20px;
-    height: 20px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff3864" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg>') no-repeat;
-    transform: translateY(-50%) rotate(20deg);
-    opacity: 0.7;
-    animation: float 3s ease-in-out infinite;
-}
-
-.logo-text p::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #ff3864, transparent);
-    box-shadow: 0 0 10px #ff3864;
-    animation: flicker 1.5s ease-in-out infinite alternate;
-}
-
-/* Анимации для заголовка */
-@keyframes bloodPulse {
-    0% {
-        text-shadow: 
-            0 0 5px #ff0000,
-            0 0 10px #ff3864,
-            0 0 20px #ff3864;
-        transform: skew(-10deg) scale(1);
-    }
-    100% {
-        text-shadow: 
-            0 0 10px #ff0000,
-            0 0 20px #ff3864,
-            0 0 40px #ff3864;
-        transform: skew(-10deg) scale(1.05);
-    }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(-50%) rotate(20deg) translateY(0); }
-    50% { transform: translateY(-50%) rotate(20deg) translateY(-10px); }
-}
-
-@keyframes flicker {
-    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-    }
-    20%, 24%, 55% {
-        opacity: 0.3;
-    }
-}
-
-/* Стили для мистического человечка */
+/* Мистический человечек */
 .mystery-man {
     position: relative;
-    width: 80px;
-    height: 120px;
-    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    width: 70px;
+    height: 100px;
+    filter: drop-shadow(0 0 5px var(--electric-blue));
 }
 
 .mystery-head {
@@ -1767,11 +1689,13 @@ footer {
     transform: translateX(-50%);
     width: 50px;
     height: 50px;
-    background: #333;
+    background: var(--deep-black);
+    border: 2px solid var(--neon-purple);
     border-radius: 50%;
     box-shadow: 
-        0 0 10px rgba(0, 255, 255, 0.5),
-        inset 0 0 15px rgba(255, 255, 255, 0.2);
+        0 0 10px var(--neon-purple),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+    animation: pulse-head 3s infinite alternate;
 }
 
 .mystery-eye {
@@ -1779,12 +1703,12 @@ footer {
     top: 15px;
     width: 10px;
     height: 10px;
-    background: #00ffff;
+    background: var(--electric-blue);
     border-radius: 50%;
     box-shadow: 
-        0 0 5px #00ffff,
-        0 0 10px #00ffff;
-    animation: eyeGlow 2s ease-in-out infinite alternate;
+        0 0 5px var(--electric-blue),
+        0 0 10px var(--electric-blue);
+    animation: eye-glow 2s infinite alternate;
 }
 
 .left-eye {
@@ -1801,38 +1725,210 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
-    height: 70px;
-    background: #222;
+    height: 50px;
+    background: var(--deep-black);
+    border: 2px solid var(--neon-purple);
     border-radius: 20px 20px 0 0;
     box-shadow: 
-        0 0 10px rgba(0, 255, 255, 0.3),
+        0 0 10px var(--neon-purple),
         inset 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-@keyframes eyeGlow {
-    0% { 
-        opacity: 0.7;
-        box-shadow: 
-            0 0 5px #00ffff,
-            0 0 10px #00ffff;
-    }
-    100% { 
-        opacity: 1;
-        box-shadow: 
-            0 0 10px #00ffff,
-            0 0 20px #00ffff;
-    }
-}
+/* Подключаем шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap');
 
-/* Дополнительные стили для шапки */
+/* Стиль для шапки с призраками */
 header {
     background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 100%);
     padding: 20px 0;
     border-bottom: 3px solid #ff3864;
+    position: relative;
+    overflow: hidden;
+    height: 150px; /* Фиксированная высота шапки */
 }
 
+/* Анимированные призраки на фоне */
+.ghost-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.15;
+}
+
+.ghost {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ffffff" d="M12,2A9,9 0 0,0 3,11V22L6,19L9,22L12,19L15,22L18,19L21,22V11A9,9 0 0,0 12,2M9,8A2,2 0 0,1 11,10A2,2 0 0,1 9,12A2,2 0 0,1 7,10A2,2 0 0,1 9,8M15,8A2,2 0 0,1 17,10A2,2 0 0,1 15,12A2,2 0 0,1 13,10A2,2 0 0,1 15,8Z"/></svg>');
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    animation: ghostFloat 15s linear infinite;
+}
+
+.ghost:nth-child(1) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+    animation-duration: 25s;
+    transform: scale(0.8);
+}
+
+.ghost:nth-child(2) {
+    top: 40%;
+    left: -100px;
+    animation-delay: 5s;
+    animation-duration: 30s;
+    transform: scale(1.2);
+}
+
+.ghost:nth-child(3) {
+    top: 60%;
+    left: -100px;
+    animation-delay: 10s;
+    animation-duration: 20s;
+    transform: scale(0.6);
+}
+
+.ghost:nth-child(4) {
+    top: 80%;
+    left: -100px;
+    animation-delay: 15s;
+    animation-duration: 35s;
+    transform: scale(1);
+}
+
+@keyframes ghostFloat {
+    0% {
+        transform: translateX(-100px) scale(var(--scale, 1));
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) scale(var(--scale, 1));
+        opacity: 0;
+    }
+}
+
+/* Остальные стили для шапки */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 0.5rem;
+}
+
+.logo-text p {
+    font-family: 'Creepster', cursive;
+    font-size: 1.8rem;
+    color: var(--neon-pink);
+    text-shadow: 
+        0 0 5px var(--neon-pink),
+        0 0 10px var(--neon-pink),
+        0 0 20px var(--neon-pink);
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    animation: blood-pulse 2s infinite alternate;
+}
+
+.logo-text p::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff2a6d" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/></svg>') no-repeat;
+    transform: translateY(-50%) rotate(20deg);
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-text p::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
+    box-shadow: 0 0 10px var(--neon-pink);
+    animation: flicker 1.5s ease-in-out infinite alternate;
+}
+
+/* Анимации */
+@keyframes pulse-head {
+    0% {
+        box-shadow: 
+            0 0 10px var(--neon-purple),
+            inset 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 
+            0 0 20px var(--neon-purple),
+            0 0 30px var(--neon-pink),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes eye-glow {
+    0% {
+        opacity: 0.7;
+        box-shadow: 
+            0 0 5px var(--electric-blue),
+            0 0 10px var(--electric-blue);
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 
+            0 0 10px var(--electric-blue),
+            0 0 20px var(--electric-blue);
+    }
+}
+
+@keyframes blood-pulse {
+    0% {
+        text-shadow: 
+            0 0 5px var(--neon-pink),
+            0 0 10px var(--neon-pink);
+        transform: scale(1);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px var(--neon-pink),
+            0 0 20px var(--neon-pink),
+            0 0 30px var(--neon-pink);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) rotate(20deg) translateY(0); }
+    50% { transform: translateY(-50%) rotate(20deg) translateY(-10px); }
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.3; }
 }
