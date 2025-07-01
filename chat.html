@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ретро-чат | 80-е годы</title>
+    <link rel="stylesheet" href="retro-chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="vhs-overlay"></div>
+    
+    <header class="header-80s">
+        <div class="header-content-80s">
+            <div class="logo-80s">
+                <div class="hacker-terminal">
+                    <div class="talking-head-container">
+                        <div class="talking-head" id="menuTrigger">
+                            <div class="head">
+                                <div class="glasses">
+                                    <div class="lens left"></div>
+                                    <div class="bridge"></div>
+                                    <div class="lens right"></div>
+                                </div>
+                                <div class="mouth-line"></div>
+                            </div>
+                            <div class="speech-bubble">Привет!</div>
+                        </div>
+                    </div>
+                    <div class="scrolling-text-container">
+                        <div class="scrolling-text" id="scrollingText">>_ Введите сообщение... >_ Наслаждайтесь общением... >_ Добро пожаловать в 80-е...</div>
+                    </div>
+                </div>
+            </div>
+            <div class="terminal-info">
+                <span class="blink">● ONLINE</span>
+                <span id="currentTime">[1985-01-01 00:00:00]</span>
+                <span>USERS: <span id="userCount">1</span></span>
+            </div>
+        </div>
+        
+        <!-- Выпадающее меню -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="places.html">Тайные места</a></li>
+                <li><a href="chat.html" class="active">Место общения</a></li>
+                <li><a href="mist.html">Мистические истории</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+    <main class="chat-container">
+        <div class="crt-effect">
+            <div class="chat-messages" id="chatMessages">
+                <div class="system-message">
+                    <span class="timestamp">[1985-01-01 00:00:00]</span>
+                    <span>● СИСТЕМА: Добро пожаловать в ретро-чат! Сообщения удаляются через 10 мин.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-controls">
+            <div class="input-group">
+                <input type="text" id="usernameInput" placeholder="Ваш никнейм" maxlength="15" class="retro-input" value="Гость">
+                <input type="text" id="messageInput" placeholder="Напишите сообщение..." maxlength="100" class="retro-input">
+                <button id="sendButton" class="retro-button"><i class="fas fa-paper-plane"></i> SEND</button>
+            </div>
+            <div class="chat-rules">
+                <p><i class="fas fa-exclamation-triangle"></i> Правила: Без матов, спама и флуда</p>
+                <p><i class="fas fa-exclamation-triangle"></i> Помните тут все анонимно и ники не закреплены за вами</p>
+                <p><i class="fas fa-users"></i> Сейчас онлайн: <span id="onlineUsersList">Вы</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-80s">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-terminal"></i> СТАТУС</h3>
+                <p>Сервер: ONLINE</p>
+                <p>Сообщений: <span id="totalMessages">1</span></p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-code"></i> ТЕХНОЛОГИИ</h3>
+                <p>HTML5 + CSS3</p>
+                <p>JavaScript ES6</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> ИНФО</h3>
+                <p>RETRO CHAT © 1985-2023</p>
+                <p>Версия 1.0.0</p>
+            </div>
+        </div>
+        <div class="cassette-tape"></div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
